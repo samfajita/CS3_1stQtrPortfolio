@@ -2,13 +2,20 @@
     <p> hello </p>
 
     <script>
-        let age = 14;
-        let maxAge = 100;
-        let numPerDay = 5;
+        let age = window.prompt("enter age value", "1-100")
+        let maxAge = window.prompt("enter max age", "100")
+        let numPerDay = window.prompt("enter amount of cups of matcha per day", "1-10");
+        let confirmValues = window.confirm(`are you sure the values you put are correct \n age = ${age} \n max age = ${maxAge} \n cups of matcha = ${numPerDay}`)
+
         let totalRequired = (numPerDay * 365) * (maxAge - age) 
 
-        document.write ("you will need " + totalRequired + " cups of matcha to last you until the ripe age of " + maxAge)
+        if (confirmValues == true)
+            document.write ("you will need " + totalRequired + " cups of matcha to last you until the ripe age of " + maxAge)
+        else
+            window.alert("Run the program again")
 
    </script>
+
+   <p> bye twin </p>
 
 </body>
