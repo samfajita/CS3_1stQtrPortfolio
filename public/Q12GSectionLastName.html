@@ -12,11 +12,25 @@
 
     <label> Service Charge:
         <input id="serviceCharge">
-    </label>
+    </label> <br> 
 
-    <p> Accept Input: <span id = "totalPrice"> </span></p>
+    <button onclick = "totalMeal()"> Accept Input </button>
+
+    <p> Total Meal: <span id = "totalPrice"> </span></p>
 
     <script>
+        
+        function totalMeal() {
+
+            let price = Number(document.getElementById("price").value);
+            let tip = Number(document.getElementById("tip").value);
+            let serviceCharge = Number(document.getElementById("serviceCharge").value);
+
+            let total = price + tip + (price * (serviceCharge / 100));
+
+            document.getElementById("totalPrice").innerHTML = `${total.toFixed(2)}`;
+        }
+            
 
     </script>
 
